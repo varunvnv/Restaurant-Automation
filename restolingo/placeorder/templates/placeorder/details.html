@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <title>Tables</title>
+<link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+<link rel="stylesheet" type ="text/css" href="{% static 'design2.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body id="bod02">
+<div style="background-color: #FF7575; padding: 50px;">
+<h1 class="h01" style="font-size: 90px; color:white;"> Tables </h1>
+</div>
+<h2 class="h02" style="padding-left: 5%; color: white; font-size: 90px; font: bolder; text-align: center; margin-top: 40px; font-weight: 50px;"> Your Tables! </h2> <br><br>
+<div  style="text-align: center; background-color: #FFFDF4; opacity: 0.8;
+    filter: alpha(opacity=50); margin-top: 25%; padding: 20px; ">
+<div>
+{% if tables %}
+    <ul style=" font-size: 20px; ">
+    {% for table in tables %}
+    <form action="/placeorder/{{ emp_id }}/{{ table.id }}/">
+        <input id ="tab01" style="" type="submit" href="/placeorder/{{ emp_id }}/{{ table.id }}/" value="{{ table.id }}" > 
+        </form>
+        <div id="frm">
+        <form action="/placeorder/billdetails/{{ table.id }}/">
+		<input type="submit" id="tabmenu" style="  margin: 10px; margin-bottom: 20px;" value="Bill" style="color: white;" onfocus="this.style.color=white;">
+        </form> <form action="/placeorder/dirty/{{ table.id }}/">
+        <input type="submit" id="tabmenu" style="  margin: 10px; margin-bottom: 20px;" value="Set Dirty" style="color: white; background-color: #ff6f59; " onfocus="this.style.color=white;">
+        </form>
+        </div>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No employee is available.</p>
+{% endif %}
+</div>
+</div>
+
+</body>
+</html>

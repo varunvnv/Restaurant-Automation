@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tables</title>
+
+    <meta http-equiv="refresh" content="5">
+</head>
+<body>
+ <h2>AVAILABLE TABLES</h2>
+{% for table in table_list %}
+
+    {% if table.status == 'available' %}
+    <ul>
+        <li>
+            <form action="/host/">
+                <input type="submit" name="table_id"  value="{{table.id}}" formmethod="post">
+            </form>
+        </li>
+    </ul>
+
+
+    {%endif%}
+{%endfor%}
+
+ <h2>NOT-AVAILABLE TABLES</h2>
+{% for table in table_list %}
+
+    {% if table.status != 'available' %}
+    <ul>
+        <li>
+            <button type="button">{{table.id}}</button>
+        </li>
+    </ul>
+
+
+    {%endif%}
+{%endfor%}
+
+
+
+<p>Shift starts at {{shift.start_date}}</p><br>
+                    <p>Shift ends at {{shift.end_date}}</p>
+
+
+
+</body>
+</html>

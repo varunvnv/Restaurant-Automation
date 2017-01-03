@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Confirmation Page  </title>
+        <link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body id="bod01">
+<div id="div01">
+<h1 class="h01" style="color: white; font-size: 80px;"> Restolingo </h1>
+
+
+</div>
+   
+<div id="div02" style="font-size: 40px;">
+    Dear Customer,
+        <strong>{{username}}</strong>
+   <p>  Please call Mananger for identity confirmation.
+    Manager  : +1 (609) 836-8107 </p>
+
+   <p> Add the password here: </p>
+     <form action="/online_booking/confirm_login/" method="post"> {% csrf_token %}
+    <label for="your_name">Password: </label>
+    <input type="password" name="manager_password" >
+    <input type="submit" value="OK">
+    </div>
+</form> 
+   </body>
+   
+</html>

@@ -1,0 +1,88 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  
+
+<title> Place Order</title>
+</head>
+<body id="bod01" style="background-color: #FFFDF4;">
+<div id="div01">
+      <h1 class="h01" style="font-size: 80px; color: white;"> Order </h1>
+
+</div>
+<div id="div02" style="text-align: left;">
+<!-- <h2 class="h02" style=" padding-left: 5%">Go Back To:</h2> -->
+ <!--  <form action="/placeorder/index/"> {% csrf_token %}
+      <input class="button" type="submit" value="Home">
+  </form>
+
+
+    <form action="/placeorder/{{emp_id}}/{{table_id}}/"> {% csrf_token %}
+      <input class="button" type="submit" value="Menu">
+    </form> -->
+ 
+  <div class="inner"><form action="/placeorder/{{emp_id}}/{{table_id}}/{{menu_type}}/"> {% csrf_token %}
+      <input id="button1" type="submit" value="Add" style="height: 60px; width: 120px; font-size: 30px;">
+  </form></div>
+  <br>
+  <br>
+  <div >
+<!-- <h2 class="h02" style="color: #ff9900; padding-left: 5%">Current Order:</h2> -->
+{% if list %}
+<br>
+    <ul style="margin-left: 3%; color: #4d8200; font-size: 30px; color: black">
+    {% for item in list %}
+           <form><ul>{% csrf_token %}
+                {{item.item_name}}&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp                                                       {{item.cost}} $
+           </form> <form name = "form" action = "/placeorder/{{emp_id}}/{{table_id}}/{{menu_type}}/{{item.item_name}}/{{item.id}}/success/delete_item/" method = "link" style="text-align:right;">{% csrf_token %}          
+               <button id="button2"  type = "submit" 
+                  value = "DeleteItem" style="text-align: center; background-color: #ff6a54; width: 50px; height: 50px; border-radius:100%; font-size:40px; padding-bottom: 15px;" >
+               <span class="
+glyphicon glyphicon-remove" aria-hidden="true"></span>
+               </button>   
+               </form> <br> </ul> 
+    {% endfor %}
+    <br><form>{% csrf_token %}
+     _________________________________________________________<br>
+     &nbsp&nbsp &nbsp&nbsp&nbsp&nbspTotal &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp                                       {{total}} $
+    </form>
+    </ul>
+
+    <h5 style="text-align: left; font-size: 30px; margin-top: 70px;"> Special Instructions: </h5>
+       <input type="text" name="special instructions" style="width:100%; height:100px; background-color: #66a0ff;">
+{% else %}
+    <p>No Menu is available. Please contact the manager of the restaurant</p>
+{% endif %}
+
+</div>
+</div>
+<div style="text-align: center;">
+      <form name = "form" action = "/placeorder/{{emp_id}}/{{table_id}}/{{menu_type}}/success/placed/" method = "link" style="text-align: center;">{% csrf_token %}
+      
+               <button id="button1"  type = "submit" 
+                  value = "PlaceOrder" style="height: 60px; width: 200px; font-size: 30px; align-items: center; text-align: center; background-color: #5f9bfc;" >
+                  <strong>Place Order</strong>
+               </button>
+               
+           
+     
+         
+      </form>
+       <form name = "form" action = "/placeorder/{{emp_id}}/{{table_id}}/{{menu_type}}/success/cancelled/" method = "link" >{% csrf_token %}
+      <button id ="button1"  type = "submit" 
+                  value = "CancelOrder" style="height: 60px; width: 200px; font-size: 30px; text-align: center; background-color: #5f9bfc;" >
+                  <strong>Cancel Order</strong>
+               </button> 
+               </form>
+               </div>
+
+</body>
+</html>

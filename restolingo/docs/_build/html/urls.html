@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>URLS &#8212; Restolingo 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Restolingo 1 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="urls">
+<h1>URLS<a class="headerlink" href="#urls" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>THIS IS THE urlS DOCUMENTATION PAGE</div></blockquote>
+<p>This file is used to map urls to views by using regular expressions to match strings.</p>
+<div class="section" id="url-r-views-login-details-name-login-details">
+<h2><strong>url(r&#8217;^$&#8217;, views.login_details, name=&#8217;login_details&#8217;)</strong><a class="headerlink" href="#url-r-views-login-details-name-login-details" title="Permalink to this headline">¶</a></h2>
+<p>Maps the empty url with the login_details view</p>
+</div>
+<div class="section" id="url-r-index-views-index-name-index">
+<h2><strong>url(r&#8217;^index/$&#8217;, views.index, name=&#8217;index&#8217;)</strong><a class="headerlink" href="#url-r-index-views-index-name-index" title="Permalink to this headline">¶</a></h2>
+<p>Maps the index url with the index view</p>
+</div>
+<div class="section" id="url-r-p-emp-id-0-9-views-detail-name-detail">
+<h2><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/$&#8217;, views.detail, name=&#8217;detail&#8217;)</strong><a class="headerlink" href="#url-r-p-emp-id-0-9-views-detail-name-detail" title="Permalink to this headline">¶</a></h2>
+<p>Maps the employee if url with detail view</p>
+</div>
+<div class="section" id="url-r-p-emp-id-0-9-p-table-id-0-9-views-menutype-name-menutype">
+<h2><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/(?P&lt;table_id&gt;[0-9]+)/$&#8217;, views.menutype, name=&#8217;menutype&#8217;)</strong><a class="headerlink" href="#url-r-p-emp-id-0-9-p-table-id-0-9-views-menutype-name-menutype" title="Permalink to this headline">¶</a></h2>
+<p>Maps employee_id/table_id url with the menutype view</p>
+</div>
+<div class="section" id="url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-views-menu-name-menu">
+<h2><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/(?P&lt;table_id&gt;[0-9]+)/(?P&lt;menu_type&gt;[w-]+)/$&#8217;, views.menu, name=&#8217;menu&#8217;)</strong><a class="headerlink" href="#url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-views-menu-name-menu" title="Permalink to this headline">¶</a></h2>
+<p>Maps the  employee_id/table_id/menu_type url with the menu view</p>
+</div>
+<div class="section" id="url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-p-menu-item-w-views-placeorder-name-placeorder">
+<h2><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/(?P&lt;table_id&gt;[0-9]+)/(?P&lt;menu_type&gt;[w-]+)/(?P&lt;menu_item&gt;[w-]+)/$&#8217;, views.placeorder, name=&#8217;placeorder&#8217;)</strong><a class="headerlink" href="#url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-p-menu-item-w-views-placeorder-name-placeorder" title="Permalink to this headline">¶</a></h2>
+<p>Maps the employee_id/table_id/menu_type/menu)item with the placeorder view</p>
+</div>
+<div class="section" id="url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-p-random-w-p-rand-w-views-placeordersuccess-name-placeordersuccess">
+<h2><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/(?P&lt;table_id&gt;[0-9]+)/(?P&lt;menu_type&gt;[w-]+)/(?P&lt;random&gt;[w-]+)/(?P&lt;rand&gt;[w-]+)/$&#8217;, views.placeordersuccess, name=&#8217;placeordersuccess&#8217;)</strong><a class="headerlink" href="#url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-p-random-w-p-rand-w-views-placeordersuccess-name-placeordersuccess" title="Permalink to this headline">¶</a></h2>
+<p>Maps the employee_id/table_id/menu_type/menu_item/random_number_random_number with the placeordersuccess view</p>
+</div>
+<div class="section" id="url-r-view-active-orders-views-view-active-orders-name-active-orders">
+<h2><strong>url(r&#8217;^view_active_orders/$&#8217;, views.view_active_orders, name=&#8217;active_orders&#8217;)</strong><a class="headerlink" href="#url-r-view-active-orders-views-view-active-orders-name-active-orders" title="Permalink to this headline">¶</a></h2>
+<p>Maps the view_active_orders url with the view_active_orders view</p>
+</div>
+<div class="section" id="url-r-view-in-progress-orders-views-view-in-progress-orders-name-in-progress-orders">
+<h2><strong>url(r&#8217;^view_in_progress_orders/$&#8217;, views.view_in_progress_orders, name=&#8217;in_progress_orders&#8217;)</strong><a class="headerlink" href="#url-r-view-in-progress-orders-views-view-in-progress-orders-name-in-progress-orders" title="Permalink to this headline">¶</a></h2>
+<p>Maps the view_in_progress_orders url with the view_in_progress_orders view</p>
+</div>
+<div class="section" id="url-r-view-done-orders-views-view-done-orders-name-done-orders">
+<h2><strong>url(r&#8217;^view_done_orders/$&#8217;, views.view_done_orders, name=&#8217;done_orders&#8217;)</strong><a class="headerlink" href="#url-r-view-done-orders-views-view-done-orders-name-done-orders" title="Permalink to this headline">¶</a></h2>
+<p>Maps the view_done_orders url with the view_done_orders view</p>
+</div>
+<div class="section" id="url-r-view-active-orders-p-slug-w-views-orders-detail-name-orders-detail">
+<h2><strong>url(r&#8217;^view_active_orders/(?P&lt;slug&gt;[w-]+)/$&#8217;, views.orders_detail, name=&#8217;orders_detail&#8217;)</strong><a class="headerlink" href="#url-r-view-active-orders-p-slug-w-views-orders-detail-name-orders-detail" title="Permalink to this headline">¶</a></h2>
+<p>Maps  the view_active_orders/slug url with the orders_detail view</p>
+</div>
+<div class="section" id="url-r-make-order-in-progress-p-slug-w-views-make-order-in-progress-name-make-order-in-progress">
+<h2><strong>url(r&#8217;^make_order_in_progress/(?P&lt;slug&gt;[w-]+)/$&#8217;, views.make_order_in_progress, name=&#8217;make_order_in_progress&#8217;)</strong><a class="headerlink" href="#url-r-make-order-in-progress-p-slug-w-views-make-order-in-progress-name-make-order-in-progress" title="Permalink to this headline">¶</a></h2>
+<p>Maps the make_order_in_progress/slug url with the make_order_in_progress view</p>
+</div>
+<div class="section" id="url-r-view-in-progress-orders-p-slug-w-views-in-progress-orders-detail-name-in-progress-orders-detail">
+<h2><strong>url(r&#8217;^view_in_progress_orders/(?P&lt;slug&gt;[w-]+)/$&#8217;, views.in_progress_orders_detail, name=&#8217;in_progress_orders_detail&#8217;)</strong><a class="headerlink" href="#url-r-view-in-progress-orders-p-slug-w-views-in-progress-orders-detail-name-in-progress-orders-detail" title="Permalink to this headline">¶</a></h2>
+<p>Maps the  view_in_progress_orders/slug url with the orders_detail view</p>
+</div>
+<div class="section" id="url-r-make-order-done-p-slug-w-views-make-order-done-name-make-order-done">
+<h2><strong>url(r&#8217;^make_order_done/(?P&lt;slug&gt;[w-]+)/$&#8217;, views.make_order_done, name=&#8217;make_order_done&#8217;)</strong><a class="headerlink" href="#url-r-make-order-done-p-slug-w-views-make-order-done-name-make-order-done" title="Permalink to this headline">¶</a></h2>
+<p>Maps the make_order_done/slug url with the make_order_done view</p>
+</div>
+<div class="section" id="url-r-notifications-p-iden-0-9-views-notifications-name-notifications">
+<h2><a href="#id1"><span class="problematic" id="id2">**</span></a>url(r&#8217;^notifications/(?P&lt;iden&gt;[0-9]+)/$&#8217;, views.notifications, name=&#8217;notifications&#8217;),<a class="headerlink" href="#url-r-notifications-p-iden-0-9-views-notifications-name-notifications" title="Permalink to this headline">¶</a></h2>
+<p>Maps the notifications/slug url with the notifications view</p>
+</div>
+<div class="section" id="url-r-shift-p-shift-0-9-views-manage-shift-name-manage-shift">
+<h2><a href="#id3"><span class="problematic" id="id4">**</span></a>url(r&#8217;^shift/(?P&lt;shift&gt;[0-9]+)/$&#8217;, views.manage_shift, name=&#8217;manage_shift&#8217;),<a class="headerlink" href="#url-r-shift-p-shift-0-9-views-manage-shift-name-manage-shift" title="Permalink to this headline">¶</a></h2>
+<p>Maps the manage_shift/slug url with the manage_shift view</p>
+</div>
+<div class="section" id="url-r-dirty-p-table-id-0-9-views-dirty-name-dirty">
+<h2><a href="#id5"><span class="problematic" id="id6">**</span></a>url(r&#8217;^dirty/(?P&lt;table_id&gt;[0-9]+)/$&#8217;, views.dirty, name=&#8217;dirty&#8217;),<a class="headerlink" href="#url-r-dirty-p-table-id-0-9-views-dirty-name-dirty" title="Permalink to this headline">¶</a></h2>
+<p>Maps the dirty/slug url with the dirty view</p>
+</div>
+<div class="section" id="url-r-billdetails-p-tid-0-9-views-bill-details-name-bill-details">
+<h2><a href="#id7"><span class="problematic" id="id8">**</span></a>url(r&#8217;^billdetails/(?P&lt;tid&gt;[0-9]+)/$&#8217;, views.bill_details, name=&#8217;bill_details&#8217;),<a class="headerlink" href="#url-r-billdetails-p-tid-0-9-views-bill-details-name-bill-details" title="Permalink to this headline">¶</a></h2>
+<p>Maps the bill_details/slug url with the bill_details view</p>
+</div>
+<div class="section" id="url-r-billdetails-p-tid-0-9-clear-views-clear-bills-name-clear-bill-details">
+<h2><a href="#id9"><span class="problematic" id="id10">**</span></a>url(r&#8217;^billdetails/(?P&lt;tid&gt;[0-9]+)/clear/$&#8217;, views.clear_bills, name=&#8217;clear_bill_details&#8217;),<a class="headerlink" href="#url-r-billdetails-p-tid-0-9-clear-views-clear-bills-name-clear-bill-details" title="Permalink to this headline">¶</a></h2>
+<p>Maps the clear_bills/slug url with the clear_bills view</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">URLS</a><ul>
+<li><a class="reference internal" href="#url-r-views-login-details-name-login-details"><strong>url(r&#8217;^$&#8217;, views.login_details, name=&#8217;login_details&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-index-views-index-name-index"><strong>url(r&#8217;^index/$&#8217;, views.index, name=&#8217;index&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-p-emp-id-0-9-views-detail-name-detail"><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/$&#8217;, views.detail, name=&#8217;detail&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-p-emp-id-0-9-p-table-id-0-9-views-menutype-name-menutype"><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/(?P&lt;table_id&gt;[0-9]+)/$&#8217;, views.menutype, name=&#8217;menutype&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-views-menu-name-menu"><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/(?P&lt;table_id&gt;[0-9]+)/(?P&lt;menu_type&gt;[w-]+)/$&#8217;, views.menu, name=&#8217;menu&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-p-menu-item-w-views-placeorder-name-placeorder"><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/(?P&lt;table_id&gt;[0-9]+)/(?P&lt;menu_type&gt;[w-]+)/(?P&lt;menu_item&gt;[w-]+)/$&#8217;, views.placeorder, name=&#8217;placeorder&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-p-emp-id-0-9-p-table-id-0-9-p-menu-type-w-p-random-w-p-rand-w-views-placeordersuccess-name-placeordersuccess"><strong>url(r&#8217;^(?P&lt;emp_id&gt;[0-9]+)/(?P&lt;table_id&gt;[0-9]+)/(?P&lt;menu_type&gt;[w-]+)/(?P&lt;random&gt;[w-]+)/(?P&lt;rand&gt;[w-]+)/$&#8217;, views.placeordersuccess, name=&#8217;placeordersuccess&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-view-active-orders-views-view-active-orders-name-active-orders"><strong>url(r&#8217;^view_active_orders/$&#8217;, views.view_active_orders, name=&#8217;active_orders&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-view-in-progress-orders-views-view-in-progress-orders-name-in-progress-orders"><strong>url(r&#8217;^view_in_progress_orders/$&#8217;, views.view_in_progress_orders, name=&#8217;in_progress_orders&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-view-done-orders-views-view-done-orders-name-done-orders"><strong>url(r&#8217;^view_done_orders/$&#8217;, views.view_done_orders, name=&#8217;done_orders&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-view-active-orders-p-slug-w-views-orders-detail-name-orders-detail"><strong>url(r&#8217;^view_active_orders/(?P&lt;slug&gt;[w-]+)/$&#8217;, views.orders_detail, name=&#8217;orders_detail&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-make-order-in-progress-p-slug-w-views-make-order-in-progress-name-make-order-in-progress"><strong>url(r&#8217;^make_order_in_progress/(?P&lt;slug&gt;[w-]+)/$&#8217;, views.make_order_in_progress, name=&#8217;make_order_in_progress&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-view-in-progress-orders-p-slug-w-views-in-progress-orders-detail-name-in-progress-orders-detail"><strong>url(r&#8217;^view_in_progress_orders/(?P&lt;slug&gt;[w-]+)/$&#8217;, views.in_progress_orders_detail, name=&#8217;in_progress_orders_detail&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-make-order-done-p-slug-w-views-make-order-done-name-make-order-done"><strong>url(r&#8217;^make_order_done/(?P&lt;slug&gt;[w-]+)/$&#8217;, views.make_order_done, name=&#8217;make_order_done&#8217;)</strong></a></li>
+<li><a class="reference internal" href="#url-r-notifications-p-iden-0-9-views-notifications-name-notifications">**url(r&#8217;^notifications/(?P&lt;iden&gt;[0-9]+)/$&#8217;, views.notifications, name=&#8217;notifications&#8217;),</a></li>
+<li><a class="reference internal" href="#url-r-shift-p-shift-0-9-views-manage-shift-name-manage-shift">**url(r&#8217;^shift/(?P&lt;shift&gt;[0-9]+)/$&#8217;, views.manage_shift, name=&#8217;manage_shift&#8217;),</a></li>
+<li><a class="reference internal" href="#url-r-dirty-p-table-id-0-9-views-dirty-name-dirty">**url(r&#8217;^dirty/(?P&lt;table_id&gt;[0-9]+)/$&#8217;, views.dirty, name=&#8217;dirty&#8217;),</a></li>
+<li><a class="reference internal" href="#url-r-billdetails-p-tid-0-9-views-bill-details-name-bill-details">**url(r&#8217;^billdetails/(?P&lt;tid&gt;[0-9]+)/$&#8217;, views.bill_details, name=&#8217;bill_details&#8217;),</a></li>
+<li><a class="reference internal" href="#url-r-billdetails-p-tid-0-9-clear-views-clear-bills-name-clear-bill-details">**url(r&#8217;^billdetails/(?P&lt;tid&gt;[0-9]+)/clear/$&#8217;, views.clear_bills, name=&#8217;clear_bill_details&#8217;),</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/urls.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Christos Mitropoulos, George Chantzialexiou, Vikti Desai, Kiran Jatty, Lasya Nandamuri, Naga Venkata Varun Vinnakota.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/urls.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Models &#8212; Restolingo 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Restolingo 1 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="models">
+<h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<p>The documentation for Our Django models</p>
+<p>class Employee(models.Model):
+The class Employee is used to give the static view of the employees
+working for the restaurant.
+The attributes of the class Employee are:
+1) username: The attribute username is of type string. Each employee would</p>
+<blockquote>
+<div>have a unique username to be able to Login to the site.</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">password: The attribute password is of type string. Each employee would
+have a unique password to be able to Login to the site.
+The combination of the username and password should also be unique to
+each employee.</p>
+</li>
+<li><p class="first">role: The attribute role is of type integer. It is used to identify the
+role of an employee. The roles that are currently in the restaurant are:
+a) Manager: The unique code of Manager is 01. A manager can recruit</p>
+<blockquote>
+<div><p>employees, asign shifts to them and manage menu items.</p>
+</div></blockquote>
+<ol class="loweralpha" start="2">
+<li><dl class="first docutils">
+<dt>Chef: The unique code of Chef is 02. A chef can view all the orders</dt>
+<dd><dl class="first last docutils">
+<dt>and change the status of the order from Active (01) to</dt>
+<dd><p class="first last">Process (02) and from Process to Done(03).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Waiter: The unique code of Waiter is 03. A waiter can see his tables</dt>
+<dd><p class="first last">alloted to him by the manager and place orders for each table.
+He can also change the status from Clean (01) to Dirty (02)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Host/Hostess: The unique code of Host/Hostess is 04. A Host/Hostess can</dt>
+<dd><p class="first last">see the tables that are Free (01) to occupied (02).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Busboy: The unique code of Busboy is 05. A Busboy can view the tables</dt>
+<dd><p class="first last">that are Dirty(02) to Clean (01) after cleaning them.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</li>
+</ol>
+<p>class Table(models.Model):
+The class Table is used to give the static view of the tables present in
+the restaurant.
+The attributes of the class Employee are:
+1) employee_id: It is the Foreign key from table Employee which is of type</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>integer and is used to assign each unique table to unique employee.</dt>
+<dd>Here both of these tables are associated with many to one
+relationship.</dd>
+</dl>
+</div></blockquote>
+<p>class Item(models.Model):
+The class Item is used to give the static view of the items in the menu.
+The attributes of the class Item are:
+1) name: The attribute name is of type string and is used to identify the item.</p>
+<blockquote>
+<div>Each item name is unique.</div></blockquote>
+<ol class="arabic" start="2">
+<li><dl class="first docutils">
+<dt>price: The attribute price is of type double and is used to give the price</dt>
+<dd><p class="first last">of the item. the manager can change the price of the item at any time.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>type: The attribute type is of type string and is used to describe in what</dt>
+<dd><p class="first last">category the item falls under. The type is a unique attribute.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>class Order(models.Model):
+The class Order is used to give the static view of the order placed by a table.
+The attributes of the class Order are:
+1) employee_id: The attribute employee_id is a Foreign key from the table employee</p>
+<blockquote>
+<div>to know by which employee is the order placed.</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">table_id: The attribute table_id is a Foreign key from the table &#8216;table&#8217; to
+have an idea of what table does the order belong to</p>
+</li>
+<li><p class="first">status: The attribute status is of type integer and is used to keep track of the
+status of the order. Only chef has the authorization to change the status of the
+orders placed. Various status used are:
+a) Active: Indicates that the order is not yet started cooking and is represented</p>
+<blockquote>
+<div><p>by integer 01.</p>
+</div></blockquote>
+<ol class="loweralpha" start="2">
+<li><dl class="first docutils">
+<dt>Process: Indicates that the order is in process of preparation once</dt>
+<dd><dl class="first last docutils">
+<dt>the chef selects the order from active site. It is represented by the</dt>
+<dd><p class="first last">integer 02.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Done: Indicates that the order is ready to serve. The status is changed by the</dt>
+<dd><dl class="first last docutils">
+<dt>chef once the order is cooked in order to let the wiater to know so that</dt>
+<dd><p class="first last">he can serve. It is represented by the integer 03.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ol>
+</li>
+<li><dl class="first docutils">
+<dt>order_date: The attribute order_date is of type date and is used to keep track of</dt>
+<dd><p class="first last">the date, the order was placed for future reference.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>items: The attribute items is used to keep the list of items placed in an order</dt>
+<dd><p class="first last">that are mapped from the table Item associating with many to many relationship.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>class OrderItem(models.Model):
+The class OrderItem is used to give the static view of the items placed in an order
+by a table.
+The attributes of the class OrderItem are:
+1) order_id: The attribute order_id is used to know which item comes under what order.</p>
+<blockquote>
+<div>It is a Foreign key mapped from the table Order.</div></blockquote>
+<ol class="arabic" start="2">
+<li><dl class="first docutils">
+<dt>item_id: The attribute item_id is a Foreign key mapped from the table Item to let us</dt>
+<dd><p class="first last">know the items under an order.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/models (1).txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Christos Mitropoulos, George Chantzialexiou, Vikti Desai, Kiran Jatty, Lasya Nandamuri, Naga Venkata Varun Vinnakota.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/models (1).txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

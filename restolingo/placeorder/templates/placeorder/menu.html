@@ -1,0 +1,74 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MENU</title>
+  <link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  </head>
+<body style="background-color: #fffff2;">
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#">Home</a>
+    <a href="#">Tables </a>
+    <a href="#">Contact Support</a>
+    <a href="#">Fill Customer Feedback</a>
+  </div>
+  </div>
+<div style="background-color: #FF7575; padding:30px; padding-right: 20px;">
+<div class="container" onclick="openNav()">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+      <h1 class="h01" style="font-size: 80px; color: white;"> Menu </h1>
+
+</div>
+
+
+ <!-- 
+  <form action="/placeorder/index/"> {% csrf_token %}
+      <input class="button" type="submit" value="Go to Home ">
+      
+          
+  </form> -->
+ <!--  <form action="/placeorder/dirty/{{table_id}}"> {% csrf_token %}
+      <input class="button" type="submit" value="Table Dirty ">
+  </form> -->
+      <br><br><br>
+     <!--  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>  -->
+<h2 class="h02" style="color: #4d8200; margin-left: 2%; color: #4286f4; font-size: 60px; text-align: center;"> Choose Category :</h2>
+<div style="padding-top: 170px;">
+
+<form method = "link" action="/placeorder/{{emp_id}}/{{table_id}}/snacks/">{% csrf_token %}
+  <input id ="snacks" type = "submit" value = "Snacks">
+    </form>
+      <form  method = "link" action="/placeorder/{{emp_id}}/{{table_id}}/desserts/">{% csrf_token %}
+  <input id="desserts" type = "submit" value = "Desserts">
+</form>
+
+</div>
+<script type="text/javascript">
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close */
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+</body>
+</html>
+
+

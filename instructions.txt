@@ -1,0 +1,12 @@
+setup connection:
+add your derek-banas.pem key to ~/.ssh/derek-banas.pem file
+
+change permissions to 400
+
+chmod 400 derek-banas.pem 
+
+How to ssh to the instance:
+
+ssh -i /path/derek-banas.pem ubuntu@35.161.91.150
+
+varun changes

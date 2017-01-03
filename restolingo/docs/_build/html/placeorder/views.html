@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Views &#8212; Restolingo 1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Restolingo 1 documentation" href="../index.html" />
+    <link rel="up" title="&lt;no title&gt;" href="../placeorder.html" />
+    <link rel="next" title="Templates" href="templates.html" />
+    <link rel="prev" title="Models" href="models.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="views">
+<h1>Views<a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h1>
+<p>THIS IS THE VIEWS DOCUMENTATION PAGE</p>
+<div class="section" id="def-access-restricted-request-users-group">
+<h2><strong>def access_restricted(request,users_group)</strong><a class="headerlink" href="#def-access-restricted-request-users-group" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>returns True if the user belongs to the group, False otherwise</div></blockquote>
+</div>
+<div class="section" id="def-detail-request-emp-id">
+<h2><strong>def detail(request, emp_id)</strong><a class="headerlink" href="#def-detail-request-emp-id" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets the tables of every waiter and passses them as arguments to the detail.html page</div></blockquote>
+</div>
+<div class="section" id="def-index-request">
+<h2><strong>def index(request)</strong><a class="headerlink" href="#def-index-request" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>The starting page of the placeorder app. Displays all the Users</div></blockquote>
+</div>
+<div class="section" id="def-menutype-request-emp-id-table-id">
+<h2><strong>def menutype(request, emp_id, table_id)</strong><a class="headerlink" href="#def-menutype-request-emp-id-table-id" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets all the menu items ordered by type and passes them as argument to the menu.html page</div></blockquote>
+</div>
+<div class="section" id="def-menu-request-emp-id-table-id-menu-type">
+<h2><strong>def menu(request, emp_id, table_id, menu_type)</strong><a class="headerlink" href="#def-menu-request-emp-id-table-id-menu-type" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets all the menu items that have the specifief menu type and passes them as argument to the menuitem.html</div></blockquote>
+</div>
+<div class="section" id="def-placeorder-request-emp-id-table-id-menu-type-menu-item">
+<h2><strong>def placeorder(request, emp_id, table_id, menu_type, menu_item)</strong><a class="headerlink" href="#def-placeorder-request-emp-id-table-id-menu-type-menu-item" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets the all the items that are ordered and passes them as argument to the placeorder.html file to display them and their cost.</div></blockquote>
+</div>
+<div class="section" id="def-placeordersuccess-request-emp-id-table-id-menu-type-random-rand">
+<h2><strong>def placeordersuccess(request, emp_id, table_id, menu_type, random, rand)</strong><a class="headerlink" href="#def-placeordersuccess-request-emp-id-table-id-menu-type-random-rand" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Places the final order and passes it as an argument to the orderplaced.html</div></blockquote>
+</div>
+<div class="section" id="def-view-active-orders-request">
+<h2><strong>def view_active_orders(request)</strong><a class="headerlink" href="#def-view-active-orders-request" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets all the active orders and passes them as an argument to the view_active_orders.html page</div></blockquote>
+</div>
+<div class="section" id="def-view-in-progress-orders-request">
+<h2><strong>def view_in_progress_orders(request)</strong><a class="headerlink" href="#def-view-in-progress-orders-request" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets all the in progress orders and passes them as an argument to the view_in_progress_orders.html page</div></blockquote>
+</div>
+<div class="section" id="def-orders-detail-request-slug">
+<h2><strong>def orders_detail(request, slug)</strong><a class="headerlink" href="#def-orders-detail-request-slug" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Shows the details of every order</div></blockquote>
+</div>
+<div class="section" id="def-make-order-in-progress-request-slug">
+<h2><strong>def make_order_in_progress(request, slug)</strong><a class="headerlink" href="#def-make-order-in-progress-request-slug" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Updates an order from active into in progress</div></blockquote>
+</div>
+<div class="section" id="def-make-order-done-request-slug">
+<h2><strong>def make_order_done(request, slug)</strong><a class="headerlink" href="#def-make-order-done-request-slug" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Updates an order from in progress into done</div></blockquote>
+</div>
+<div class="section" id="def-view-done-orders-request">
+<h2><strong>def view_done_orders(request)</strong><a class="headerlink" href="#def-view-done-orders-request" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets all the done orders and passes them as argument to the view_done_orders.html page</div></blockquote>
+</div>
+<div class="section" id="def-bill-details-request-tid">
+<h2><strong>def bill_details(request, tid):</strong><a class="headerlink" href="#def-bill-details-request-tid" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets all the orders placed by a table and passes them as well as the total amount of the bill as argument to the bill_details.html</div></blockquote>
+</div>
+<div class="section" id="def-notifications-request-iden">
+<h2><strong>def notifications(request, iden):</strong><a class="headerlink" href="#def-notifications-request-iden" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Changes the status of order as done and passes the items that are ready to serve to the notifications.html</div></blockquote>
+</div>
+<div class="section" id="def-manage-shift-request-shift">
+<h2><strong>def manage_shift(request, shift):</strong><a class="headerlink" href="#def-manage-shift-request-shift" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Gets all the shifts of an employee and passes them as well as the total amount of the bill as argument to the shifts.html</div></blockquote>
+</div>
+<div class="section" id="def-dirty-request-table-id">
+<h2><strong>def dirty(request, table_id):</strong><a class="headerlink" href="#def-dirty-request-table-id" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Updates the table status as dirty and displays the success message</div></blockquote>
+</div>
+<div class="section" id="def-clear-bills-request-tid">
+<h2><strong>def clear_bills(request, tid):</strong><a class="headerlink" href="#def-clear-bills-request-tid" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Changes the status of OrderList to completed to indicate that the bill is not anymore active and displays the success message</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Views</a><ul>
+<li><a class="reference internal" href="#def-access-restricted-request-users-group"><strong>def access_restricted(request,users_group)</strong></a></li>
+<li><a class="reference internal" href="#def-detail-request-emp-id"><strong>def detail(request, emp_id)</strong></a></li>
+<li><a class="reference internal" href="#def-index-request"><strong>def index(request)</strong></a></li>
+<li><a class="reference internal" href="#def-menutype-request-emp-id-table-id"><strong>def menutype(request, emp_id, table_id)</strong></a></li>
+<li><a class="reference internal" href="#def-menu-request-emp-id-table-id-menu-type"><strong>def menu(request, emp_id, table_id, menu_type)</strong></a></li>
+<li><a class="reference internal" href="#def-placeorder-request-emp-id-table-id-menu-type-menu-item"><strong>def placeorder(request, emp_id, table_id, menu_type, menu_item)</strong></a></li>
+<li><a class="reference internal" href="#def-placeordersuccess-request-emp-id-table-id-menu-type-random-rand"><strong>def placeordersuccess(request, emp_id, table_id, menu_type, random, rand)</strong></a></li>
+<li><a class="reference internal" href="#def-view-active-orders-request"><strong>def view_active_orders(request)</strong></a></li>
+<li><a class="reference internal" href="#def-view-in-progress-orders-request"><strong>def view_in_progress_orders(request)</strong></a></li>
+<li><a class="reference internal" href="#def-orders-detail-request-slug"><strong>def orders_detail(request, slug)</strong></a></li>
+<li><a class="reference internal" href="#def-make-order-in-progress-request-slug"><strong>def make_order_in_progress(request, slug)</strong></a></li>
+<li><a class="reference internal" href="#def-make-order-done-request-slug"><strong>def make_order_done(request, slug)</strong></a></li>
+<li><a class="reference internal" href="#def-view-done-orders-request"><strong>def view_done_orders(request)</strong></a></li>
+<li><a class="reference internal" href="#def-bill-details-request-tid"><strong>def bill_details(request, tid):</strong></a></li>
+<li><a class="reference internal" href="#def-notifications-request-iden"><strong>def notifications(request, iden):</strong></a></li>
+<li><a class="reference internal" href="#def-manage-shift-request-shift"><strong>def manage_shift(request, shift):</strong></a></li>
+<li><a class="reference internal" href="#def-dirty-request-table-id"><strong>def dirty(request, table_id):</strong></a></li>
+<li><a class="reference internal" href="#def-clear-bills-request-tid"><strong>def clear_bills(request, tid):</strong></a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../placeorder.html">&lt;no title&gt;</a><ul>
+      <li>Previous: <a href="models.html" title="previous chapter">Models</a></li>
+      <li>Next: <a href="templates.html" title="next chapter">Templates</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/placeorder/views.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Christos Mitropoulos, George Chantzialexiou, Vikti Desai, Kiran Jatty, Lasya Nandamuri, Naga Venkata Varun Vinnakota.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../_sources/placeorder/views.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

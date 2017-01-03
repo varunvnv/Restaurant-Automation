@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Orders Detail</title>
+    <meta http-equiv="refresh" content="3">
+
+  <link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  
+</head>
+<body id="bod01">
+
+<div id="div01">
+      <h1 class="h01" style="font-size: 80px; animation-name: none; color: white;"> Order </h1>
+</div>
+
+<strong> <u> <h1 class="h02" style="  font-size: 50px; text-align:center; color: white;">Order Details</u></h1> </strong>
+<div id="div02">
+
+
+
+<span  style="font-size: 50px; text-align:left;" >{{ order.id }}</span>
+
+ {% for item in order.items.all %}
+            <ul style="margin-left: 10%; text-align: left; font-size: 30px;">
+                <li>
+                    {{item.name}}
+                </li>
+            </ul>
+{% endfor %}
+</div>
+{% if order.status == 0 %}
+<form action="{{order.get_update_url}}" style="text-align: center; ">
+
+    <button id="button1" type="submit" style="font-size:30px; height: 90px; width: 400px;">Make in progress</button>
+</form>
+{% endif %}
+
+{% if order.status == 1 %}
+<form action="{{order.get_done_url}}" style="text-align: center;" >
+
+    <button id="button1" type="submit" style="font-size:30px; height: 90px; width: 400px;"> Make done</button>
+</form>
+{% endif %}
+
+
+</body>
+</html>
+

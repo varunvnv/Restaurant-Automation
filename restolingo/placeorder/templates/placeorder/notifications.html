@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+head>
+<meta http-equiv="refresh" content="3">
+    <title>Active Orders</title>
+<link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<meta http-equiv="refresh" content="3">
+	<title>Notifications</title>
+</head>
+<body id="bod01">
+<div id="div01" style="padding-top: 30px;">
+  <h1 class="h01" style="color: white; font-size: 80px;">Notifications</h2>
+</div>
+
+<div id="div02" class="header" style="font-size: 40px;">
+ 
+{% if item %}
+{% for i in item %}
+  <form name = "form" action = "/placeorder/notifications/{{i.id}}/" method = "POST" >{% csrf_token %}
+               <input type = "submit" value = " Order {{i.id}} of table {{i.table_id}} is ready" >
+  </form>
+{% endfor %}
+{% else %}
+    <p>No notification is available.</p>
+{% endif %}
+</div>
+</body>
+</html>
+
+<head>

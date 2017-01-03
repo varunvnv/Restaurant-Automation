@@ -1,0 +1,71 @@
+
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html >
+<head>
+  <link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <meta charset="UTF-8">
+
+    <title>Tables</title>
+       <meta http-equiv="refresh" content="5">
+</head>
+<body id="bod01">
+
+<div id="div01"></div>
+
+<div id="div02">
+ <h2>DIRTY TABLES</h2>
+{% for table in table_list %}
+
+    {% if table.status == 'dirty' %}
+    <ul>
+        <li>
+            <form action="/busboy/">
+                <input type="submit" name="table_id"  value="{{table.id}}" formmethod="post">
+            </form>
+        </li>
+    </ul>
+
+
+    {%endif%}
+{%endfor%}
+
+ <h2>OCCUPIED TABLES</h2>
+{% for table in table_list %}
+
+    {% if table.status == 'occupied' %}
+    <ul>
+        <li>
+            <button type="button">{{table.id}}</button>
+        </li>
+    </ul>
+
+
+    {%endif%}
+{%endfor%}
+
+ <h2>AVAILABLE TABLES</h2>
+{% for table in table_list %}
+
+    {% if table.status == 'available' %}
+    <ul>
+        <li>
+            <button type="button">{{table.id}}</button>
+        </li>
+    </ul>
+
+
+    {%endif%}
+{%endfor%}
+<p style="font-size: 40px;">Shift starts at {{shift.start_date}}</p><br>
+                    <p>Shift ends at {{shift.end_date}}</p>
+</div>
+
+</body>
+</html>

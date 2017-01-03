@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> ORDERS DONE </title>
+    <meta http-equiv="refresh" content="5">
+
+  <link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  
+
+<title> Place Order</title>
+</head>
+<body id="bod01">
+<div id= "div01">
+      <h1 class="h01" style="font-size: 80px; animation-name: none; color: white;" > Order </h1>
+
+</div>
+<strong> <h1 class="h02" style=" text-align: center;font-size:60px;  color: white;"> All done orders are here </strong> </h1>
+<div id="div02">
+
+{%for order in order_list %}
+{%if order.status == 2 %}
+<ul style="text-align: left; font-size: 50px;">
+    <li>
+        <a class="link01" style="text-align:left;  font-size: 50px;">
+            {{order.id|title}} </a>
+            <br>
+            {% for item in order.items.all %}
+            <ul>
+                <li style=" font-size: 50px;">
+                    {{item.name}}
+                </li>
+            </ul>
+            {% endfor %}
+        </a>
+
+    </li>
+</ul>
+{%endif%}
+{%endfor%}
+
+<form action="../view_active_orders/" >
+    <input id="button1" type="submit" value="View Active Orders" style="width: 500px; height:80px;font-size: 50px;">
+</div>
+</body>
+</html>
+

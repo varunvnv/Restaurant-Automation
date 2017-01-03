@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Orders In Progress</title>
+    <meta http-equiv="refresh" content="5">
+
+  <link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  
+
+<title> Place Order</title>
+</head>
+<body id="bod01">
+
+<div id="div01">
+    
+
+      <h1 class="h01" style="font-size: 80px; color: white;"> Order </h1>
+
+</div>
+<strong><u><h1 class="h02" style="text-align: center; color: white; font-size: 50px; "> Orders In Progress </u> </h1> </strong>
+
+<div id="div02">
+{%for order in order_list %}
+{%if order.status == 1 %}
+<ul style="text-align: left; font-size: 30px;">
+    <li >
+        <a href="{{ order.get_in_progress_url}}" class="link01">
+            {{order.id|title}} </a>
+            <br>
+            {% for item in order.items.all %}
+            <ul>
+                <li>
+                    {{item.name}}
+                </li>
+            </ul>
+            {% endfor %}
+        </a>
+
+    </li>
+</ul>
+{%endif%}
+{%endfor%}
+
+</div>
+<form action="../view_active_orders/" style="text-align: center;">
+    <strong><input id="button1" type="submit" value="View Active Orders" style=" font:bold; font-size: 30px;  width: 250px; height: 80px;"></strong>
+</form>
+</body>
+</html>

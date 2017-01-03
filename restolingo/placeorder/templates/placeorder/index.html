@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Names</title>
+	<link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body id="bod01" style="background-color: #FFFDF4;">
+
+<!-- Use any element to open the sidenav -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="#">Logout</a>
+    <a href="#">Go to Menu </a>
+    <a href="#">Contact Support</a>
+  </div>
+
+</div>
+<div id="main">
+
+<div id="div01" style="background-color: #FF7575; padding-top: 30px; padding-bottom: 30px; padding-left: 30px;">
+
+<div class="container" onclick="openNav()">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+ <h1 class="h01" style="font-size: 80px; color: #FFFDF4;"> Hi ! {{name.username}} </h1>
+ 
+</div>
+
+ <h3 class="h03" style=" font-size: 60px; color: white; font:bold; text-align: center; margin-top:20px;"> How are you today ? </h3>
+<div style="background-color: #FFFDF4; text-align: center; opacity: 0.7;
+    filter: alpha(opacity=50); margin-top:25%; padding:20px;">
+{% if name %}
+<p id="pwelcome" style="font-size: 50px;">Welcome to your homepage !</p>        
+<form action="/placeorder/{{name.id}}/" >{% csrf_token %}<input type="submit" value="Tables" id="button1"></form>
+<form action="/placeorder/notifications/0/" > {% csrf_token %}  <input type="submit" value="Notifications" id="button1">  </form>
+<form action="/placeorder/shift/{{shift}}/" > {% csrf_token %} <input type="submit" value="Shifts" id="button1">         
+</form>
+
+{% endif %}
+</div>
+</div>
+
+
+<script type="text/javascript">
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+/* Open */
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close */
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
+</script>
+</body>
+</html>
+    <ul>
+   

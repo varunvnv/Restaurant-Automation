@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Online Ordering  </title>
+        <link rel="stylesheet" type ="text/css" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body id="bod01">
+<div id="div01">
+<h1 class="h01" style="font-size: 80px; color: white;"> Online Ordering </h1>
+   
+      </div >
+
+      <div id="div02" style="text-align: center; font-size: 40px;">
+      <form name = "form" action ="customer_logged_in/"
+         method = "POST" >  {% csrf_token %}
+         
+         <div style = "max-width:470px;">
+            <center>
+		<p>Fullname: 
+               <input type = "text"
+                  placeholder = "Full Name" name = "username" />
+                </p>
+            </center>
+         </div>
+			
+         <br>
+         
+         <div style = "max-width:470px;">
+            <center>
+        	<p> 
+                Phone Number:
+               <input type = "text" 
+                  placeholder = "Phone Number" name = "phone_number" />
+               </p>
+            </center>
+         </div>
+			
+         <br>
+         
+         <div style = "max-width:470px;">
+            <center> 
+            
+               <button id="button1" style = "border:0px; background-color:#4285F4; margin-top:8%;
+                font-size:40px; height:80px; margin-left:50%;" type = "submit" 
+                  value = "Login" >
+                  <strong>Make an order!</strong>
+               </button>
+               
+            </center>
+         </div>
+         </div>
+      </form>
+      
+   </body>
+</html>
